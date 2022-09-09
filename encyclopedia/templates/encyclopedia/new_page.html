@@ -1,0 +1,37 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {% if existing_entry %}
+        Edit Page "{{ existing_entry_title }}" | Encyclopedia
+    {% else %}
+        New Page
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+    <h1>New Page </h1>
+
+    
+    <form method="POST"> 
+        {% csrf_token %}
+        <label>Entry's title:</label>
+        {% if existing_entry %}
+            <input type="text" name="title" id="title"
+            maxlength="100" minlength="1" required value="{{existing_entry_title}}" readonly>
+        {% else %}
+            <input type="text" name="title" id="title" maxlength="100" minlength="1" required>
+        {% endif %}
+        <br>
+        <label>Entry's content:</label><br>
+        <textarea name="content" class="content-input" id="content" required minlength="20">{% if existing_entry %}{{ existing_entry_content}}{% endif %}</textarea> <br>
+        <div class="submit-btn-container">
+            {% if existing_entry %}
+                <input action="{% url 'edit_entry' %}" type="submit" value="Submit Changes" class="submit-btn">
+            {% else %}
+                <input action="{% url 'new_entry' %}" type="submit" value="Add Entry" class="submit-btn">
+            {% endif %}
+            
+        </div>
+    </form>
+
+{% endblock %}

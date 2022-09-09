@@ -1,0 +1,16 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    "{{ entry_query }}" Results
+{% endblock %}
+
+{% block body %}
+    <h1>{{result_instruction|safe}}</h1>
+
+    <ul>
+    {% for entry in result_list %}
+        <a href="wiki/{{entry}}"><li>{{entry}}</li></a>
+    {% endfor %}
+    </ul>
+
+{% endblock %}
