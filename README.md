@@ -9,6 +9,10 @@ I just had to create the requested functions in the Backend. </p>
 
 ### Images
 
-![Screen 1](screenshots/wiki-screen1.png)
+![Screen 3](screenshots/wiki-screen3.png)
 
-![Screen 2](screenshots/wiki-screen2.png)
+![Screen 4](screenshots/wiki-screen4.png)
+
+![Screen 5](screenshots/wiki-screen5.png)
+
+![Screen 6](screenshots/wiki-screen6.png)
